@@ -1,0 +1,35 @@
+{
+  "name": "donation",
+  "version": "1.0.0",
+  "description": "Donation ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "febrisanyah.dev",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.1.3",
+    "cors": "^2.8.5",
+    "dateformat": "^4.5.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "firebase-admin": "^10.0.2",
+    "ipware": "^2.0.0",
+    "jquery": "^3.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "node-libcurl": "^2.3.3",
+    "node-machine-id": "^1.1.12",
+    "qrcode": "^1.5.0",
+    "request": "^2.88.2",
+    "sequelize": "^6.6.5",
+    "socket.io": "^4.0.1",
+    "tzdata": "^1.0.25",
+    "uuid": "^8.3.2"
+  }
+}

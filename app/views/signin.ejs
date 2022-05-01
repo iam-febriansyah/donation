@@ -1,0 +1,165 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .text-left {
+      text-align: left;
+    }
+
+    .padding-button {
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 50%;
+        "></div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -20%;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+      <div class="card-body py-5">
+
+        <div class="row d-flex">
+          <div class="col-md-6">
+            <img src="/images/mosque.png" class="img-responsive img-fluid">
+          </div>
+          <div class="col-md-6 align-self-center" style="padding-left: 2%; padding-right: 2%;">
+            <div id="signUp">
+              <h2 class="fw-bold mb-5">Daftarkan Mushola Anda</h2>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline text-left">
+                    <input type="text" id="merchant_name" class="form-control" />
+                    <label class="form-label text-left" for="merchant_name">Nama Mushola</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline text-left">
+                    <input type="text" id="email" class="form-control" />
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-outline mb-4 text-left">
+                <input type="email" id="merchant_address" class="form-control" />
+                <label class="form-label" for="merchant_address">Alamat</label>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline text-left">
+                    <input type="text" id="phone" class="form-control" />
+                    <label class="form-label text-left" for="phone">Nomor Handphone (WA)</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline text-left">
+                    <input type="password" id="password" class="form-control" />
+                    <label class="form-label" for="password">Password</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-outline text-left row padding-button ">
+                    <button type="button" id="btnSignUp" onclick="submit('btnSignUp','signup')" class="btn btn-primary btn-block">
+                      Daftar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12" style="padding-top: 2%;">
+                <div class="text-center">
+                  <label for="password">Sudah Punya akun? <a href="#" onclick="signInUp('signIn','signUp')">Masuk disini</a></label>
+                </div>
+              </div>
+            </div>
+
+            <div id="signIn">
+              <h2 class="fw-bold mb-5">Masuk</h2>
+              <div class="row ">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline text-left">
+                    <input type="text" id="phone_signin" class="form-control" />
+                    <label class="form-label text-left" for="phone_signin">Nomor Handphone (WA)</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline text-left">
+                    <input type="password" id="password_signin" class="form-control" />
+                    <label class="form-label" for="password_signin">Password</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-outline text-left row padding-button ">
+                    <button type="button" id="btnSignIn" onclick="submit('btnSignIn','signin')" class="btn btn-primary btn-block">
+                      Masuk
+                    </button>
+                  </div>
+                  <div class="col-md-12" style="padding-top: 2%;">
+                    <div class="text-center">
+                      <label for="password">Belum Punya akun? <a href="#" onclick="signInUp('signUp','signIn')">Daftar disini</a></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- Section: Design Block -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script>
+    $("#signUp").hide();
+
+    function signInUp(show, hide) {
+      $("#" + hide).hide();
+      $("#" + show).show();
+    }
+
+    function submit(btn, url) {
+      if (url == 'signin') {
+        var data = {
+          phone: $("#phone_signin").val(),
+          password: $("#password_signin").val(),
+        }
+      } else {
+        var data = {
+          merchant_name: $("#merchant_name").val(),
+          merchant_address: $("#merchant_address").val(),
+          email: $("#email").val(),
+          phone: $("#phone").val(),
+          password: $("#password").val(),
+        }
+      }
+      $.ajax({
+        type: 'POST',
+        url: '/' + url,
+        dataType: 'json',
+        data: data,
+        success: function(res) {
+          console.log(res)
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
