@@ -155,7 +155,15 @@
         dataType: 'json',
         data: data,
         success: function(res) {
-          console.log(res)
+          if (res.status) {
+            if (url == 'signin') {
+              window.location.replace("/qr")
+            } else {
+              window.location.replace("/")
+            }
+          } else {
+            alert(res.message)
+          }
         }
       });
     }

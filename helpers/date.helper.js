@@ -5,7 +5,6 @@ const dateNowYmdHis = function () {
     new Date().toLocaleString("en-US", { timeZone: "Asia/Jakarta" }),
     "yyyy-mm-dd hh:MM:ss"
   );
-  console.log(result);
   return result;
 };
 const dateNowYmd = function () {

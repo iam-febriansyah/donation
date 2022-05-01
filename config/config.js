@@ -1,4 +1,5 @@
 module.exports = {
+  PRODUCTION: false,
   HOST: "139.255.83.138",
   USER: "spuser",
   PASSWORD: "speedlab81",
@@ -11,11 +12,14 @@ module.exports = {
     idle: 10000,
   },
   PORT: 9001,
+  PORTDEV: 9002,
   Origin: "http://localhost:9001",
   URL: "http://localhost:9001",
   URLCLIENT: "speedlab.eazynotif.com",
   PATHSESSION: "./sessions",
   SESSION: "donation-session",
-  PATHCERT: "/Users/febriansyahdev/Documents/Project/Node Js/donation/cert.pem", // /etc/letsencrypt/live/eazynotif.id/cert.pem
-  PATHKEY: "/Users/febriansyahdev/Documents/Project/Node Js/donation/key.pem", // /etc/letsencrypt/live/eazynotif.id/privkey.pem
+  PATHCERT: "/Users/febriansyahdev/Documents/Project/Node Js/donation/cert.pem",
+  PATHKEY: "/Users/febriansyahdev/Documents/Project/Node Js/donation/key.pem",
+  PATHCERTPRD: "/etc/letsencrypt/live/eazynotif.id/cert.pem",
+  PATHKEYPRD: "/etc/letsencrypt/live/eazynotif.id/privkey.pem,",
 };

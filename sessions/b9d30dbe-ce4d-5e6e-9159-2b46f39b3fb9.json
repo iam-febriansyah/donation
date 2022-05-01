@@ -1,12 +1,12 @@
 {
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGZhNGYwLTI3YTgtNDRiYy1hMmMyLTE2NzRlOTQyNGYzMiIsImlhdCI6MTY1MTQzMjM2NiwiZXhwIjoxNjgyOTY4MzY2fQ.1icyL9CawcgJsE4Waq9CPAEzQGYklegAP-2BxcEXgAQ",
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGZhNGYwLTI3YTgtNDRiYy1hMmMyLTE2NzRlOTQyNGYzMiIsImlhdCI6MTY1MTQzODY5NSwiZXhwIjoxNjgyOTc0Njk1fQ.3M8N6seFlOwUpu2aFNfnIdcrMX8bygTKSSdlphY000M",
 	"user": {
 		"user_id": "978fa4f0-27a8-44bc-a2c2-1674e9424f32",
 		"merchant_id": "6c377030-c972-11ec-82bc-a55628c83618",
 		"email": "febriansyah032@gmail.com",
 		"phone": "08128182012",
 		"password": "$2a$08$GfJhyJFs7LmnjnD4AwVVWenchv.JGyBURKqxq/BrrUwh8LSPYwjVO",
-		"last_login": "2022-05-02T01:19:54.000Z",
+		"last_login": "2022-05-02T03:55:43.000Z",
 		"created_at": "2022-05-01T17:16:22.000Z",
 		"created_by": "{\"clientIp\":\"::1\",\"clientIpRoutable\":false}",
 		"updated_at": null,

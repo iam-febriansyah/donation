@@ -43,9 +43,11 @@ db.sequelize.sync();
 process.env.TZ = "Asia/Jakarta";
 
 const PORT = process.env.PORT || config.PORT;
+const PORTDEV = process.env.PORT || config.PORTDEV;
 const URL = config.URL;
-var privateKey = fs.readFileSync(config.PATHKEY, "utf8");
-var certificate = fs.readFileSync(config.PATHCERT, "utf8");
+
+var privateKey = fs.readFileSync(config.PRODUCTION ? config.PATHKEYPRD : config.PATHKEY, "utf8");
+var certificate = fs.readFileSync(config.PRODUCTION ? config.PATHCERTPRD : config.PATHCERT, "utf8");
 var credentials = {
   key: privateKey,
   cert: certificate,
@@ -69,11 +71,11 @@ io.on("connection", function (socket) {
 // require("./routes/web.route")(app, io);
 require("./routes/web.route")(app);
 
-// if (!config.PRODUCTION) {
-httpServer.listen(9002);
-// } else {
-httpsServer.setTimeout(30000);
-httpsServer.listen(PORT, () => {
-  console.log(`Server is running on ${URL}`);
-});
-// }
+if (!config.PRODUCTION) {
+  httpServer.listen(PORTDEV);
+} else {
+  httpsServer.setTimeout(30000);
+  httpsServer.listen(PORT, () => {
+    console.log(`Server is running on ${URL}`);
+  });
+}

@@ -17,9 +17,9 @@ var deviceId = machineIdSync({ original: true });
 exports.getSignIn = async (req, res) => {
   var sessionDeviceId = sess.getSession(deviceId);
   console.log(sessionDeviceId);
-  // if (sessionDeviceId) {
-  //   res.redirect("/qr");
-  // }
+  if (sessionDeviceId.status) {
+    return res.redirect("/qr");
+  }
   res.render("signin");
 };
 

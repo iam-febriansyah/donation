@@ -22,7 +22,6 @@ exports.createOrder = async (req, res) => {
     var data = sessionDeviceId.data;
 
     var request = req.body;
-    console.log(request);
     var order_id = uuidv1();
     var price = request.price;
     var name = data.merchant.merchant_name;
@@ -50,6 +49,7 @@ exports.createOrder = async (req, res) => {
       transaction_details: transaction_details,
     };
     var resPayment = await speedpay.createOrder(dataToSpeedpay);
+    // console.log(resPayment);
     if (resPayment.status) {
       if (resPayment.data.payment) {
         var data = resPayment.data.payment;
